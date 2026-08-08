@@ -15,9 +15,10 @@ export function Hero() {
             MINTING SOON
           </span>
 
-          <h1 className="mt-6 break-words font-display text-[clamp(2rem,9vw,4.5rem)] leading-none">
+          <h1 className="mt-6 break-words font-display text-[clamp(1.5rem,4.8vw,3.5rem)] leading-none">
             CUCUMELON
           </h1>
+
 
           <h2 className="mt-5 font-display text-[clamp(0.85rem,3.2vw,1.5rem)] leading-relaxed text-emerald">
             Fresh pixels.
