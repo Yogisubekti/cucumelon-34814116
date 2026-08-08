@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PixelDecor } from "@/components/PixelDecor";
 import { OPENSEA_URL } from "@/lib/constants";
-import heroImg from "@/assets/hero-cucumelon.png";
+import heroAsset from "@/assets/cuke-4.asset.json";
 
 export function Hero() {
   return (
@@ -45,8 +45,8 @@ export function Hero() {
         <div className="relative flex justify-center lg:justify-end">
           <div className="absolute inset-x-8 top-8 bottom-8 border-2 border-border bg-lime" />
           <img
-            src={heroImg}
-            alt="Cucumelon pixel art character wearing a crown and 3D glasses"
+            src={heroAsset.url}
+            alt="Cucumelon pixel art character wearing a golden crown and royal cape"
             width={1024}
             height={1024}
             className="pixelated relative w-[min(100%,26rem)] animate-float drop-shadow-[8px_8px_0_var(--ink)]"

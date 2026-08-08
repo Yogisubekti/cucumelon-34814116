@@ -2,20 +2,20 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NFTCard, type NFTItem } from "@/components/NFTCard";
 import { OPENSEA_URL } from "@/lib/constants";
-import n1 from "@/assets/nft-001.jpg";
-import n2 from "@/assets/nft-002.jpg";
-import n3 from "@/assets/nft-003.jpg";
-import n4 from "@/assets/nft-004.jpg";
-import n5 from "@/assets/nft-005.jpg";
-import n6 from "@/assets/nft-006.jpg";
+import n1 from "@/assets/cuke-1.asset.json";
+import n2 from "@/assets/cuke-2.asset.json";
+import n3 from "@/assets/cuke-3.asset.json";
+import n5 from "@/assets/cuke-5.asset.json";
+import n6 from "@/assets/cuke-6.asset.json";
+import n7 from "@/assets/cuke-7.asset.json";
 
 const items: NFTItem[] = [
-  { id: "001", image: n1, name: "Cucumelon #001", rarity: "Common" },
-  { id: "002", image: n2, name: "Cucumelon #002", rarity: "Uncommon" },
-  { id: "003", image: n3, name: "Cucumelon #003", rarity: "Legendary" },
-  { id: "004", image: n4, name: "Cucumelon #004", rarity: "Rare" },
-  { id: "005", image: n5, name: "Cucumelon #005", rarity: "Epic" },
-  { id: "006", image: n6, name: "Cucumelon #006", rarity: "Uncommon" },
+  { id: "001", image: n1.url, name: "Cucumelon #001", rarity: "Rare" },
+  { id: "002", image: n2.url, name: "Cucumelon #002", rarity: "Legendary" },
+  { id: "003", image: n3.url, name: "Cucumelon #003", rarity: "Common" },
+  { id: "004", image: n5.url, name: "Cucumelon #004", rarity: "Uncommon" },
+  { id: "005", image: n6.url, name: "Cucumelon #005", rarity: "Epic" },
+  { id: "006", image: n7.url, name: "Cucumelon #006", rarity: "Rare" },
 ];
 
 export function CollectionGrid() {
