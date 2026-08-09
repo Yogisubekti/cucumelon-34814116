@@ -49,7 +49,7 @@ export function NFTCard({ item }: { item: NFTItem }) {
           </div>
         </article>
       </DialogTrigger>
-      <DialogContent className="max-w-md border-4 border-border bg-card p-0 shadow-pixel">
+      <DialogContent className="max-w-md rounded-none border-4 border-border bg-card p-0 shadow-pixel">
         <div className="scanlines border-b-4 border-border">
           <img
             src={item.image}
