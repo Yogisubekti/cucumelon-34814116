@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PixelDecor } from "@/components/PixelDecor";
+import { Countdown } from "@/components/Countdown";
 import { OPENSEA_URL } from "@/lib/constants";
 import heroAsset from "@/assets/cuke-4.asset.json";
 
@@ -10,15 +11,11 @@ export function Hero() {
       <PixelDecor />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-2">
         <div className="animate-rise">
-          <span className="inline-flex items-center gap-2 border-2 border-border bg-card px-3 py-1.5 font-display text-[10px] tracking-tight">
-            <span className="inline-block h-2 w-2 animate-blink bg-emerald" />
-            MINTING SOON
-          </span>
+          <Countdown />
 
-          <h1 className="mt-6 break-words font-display text-[clamp(1.5rem,4.8vw,3.5rem)] leading-none">
+          <h1 className="glitch mt-6 break-words font-display text-[clamp(1.5rem,4.8vw,3.5rem)] leading-none">
             CUCUMELON
           </h1>
-
 
           <h2 className="mt-5 font-display text-[clamp(0.85rem,3.2vw,1.5rem)] leading-relaxed text-emerald">
             Fresh pixels.
