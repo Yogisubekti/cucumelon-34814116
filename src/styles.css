@@ -89,6 +89,36 @@
   }
 }
 
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  92% {
+    transform: translate(-2px, 1px);
+    text-shadow: 2px 0 var(--emerald), -2px 0 var(--rare);
+  }
+  94% {
+    transform: translate(2px, -1px);
+    text-shadow: -2px 0 var(--emerald), 2px 0 var(--rare);
+  }
+  96% {
+    transform: translate(-1px, 0);
+    text-shadow: 1px 0 var(--emerald), -1px 0 var(--rare);
+  }
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  100% {
+    background-position: 0 100vh;
+  }
+}
+
 
 :root {
   --radius: 0px;
