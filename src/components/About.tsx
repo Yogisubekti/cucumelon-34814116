@@ -21,8 +21,8 @@ export function About() {
         <div className="flex justify-center md:justify-end">
           <div className="scanlines border-4 border-border bg-lime p-6 shadow-pixel">
             <img
-              src={heroImg}
-              alt="Small pixel cucumber melon icon"
+              src={heroAsset.url}
+              alt="Cucumelon pixel art character in a frog onesie holding a drink"
               width={1024}
               height={1024}
               loading="lazy"
