@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-cucumelon.png";
+import heroAsset from "@/assets/cuke-8.asset.json";
 
 export function About() {
   return (
