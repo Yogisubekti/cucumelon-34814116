@@ -54,6 +54,9 @@
   --color-darkgreen: var(--darkgreen);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
+  --color-rare: var(--rare);
+  --color-epic: var(--epic);
+  --color-legendary: var(--legendary);
   --animate-float: float 6s ease-in-out infinite;
   --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-blink: blink 1.4s steps(2, start) infinite;
@@ -86,6 +89,36 @@
   }
 }
 
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  92% {
+    transform: translate(-2px, 1px);
+    text-shadow: 2px 0 var(--emerald), -2px 0 var(--rare);
+  }
+  94% {
+    transform: translate(2px, -1px);
+    text-shadow: -2px 0 var(--emerald), 2px 0 var(--rare);
+  }
+  96% {
+    transform: translate(-1px, 0);
+    text-shadow: 1px 0 var(--emerald), -1px 0 var(--rare);
+  }
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  100% {
+    background-position: 0 100vh;
+  }
+}
+
 
 :root {
   --radius: 0px;
@@ -95,6 +128,9 @@
   --darkgreen: oklch(0.204 0.034 144.2);
   --ink: oklch(0.145 0 89.9);
   --paper: oklch(1 0 0);
+  --rare: oklch(0.58 0.18 255);
+  --epic: oklch(0.55 0.22 310);
+  --legendary: oklch(0.82 0.18 95);
 
   --background: var(--limelight);
   --foreground: var(--ink);
@@ -152,6 +188,11 @@
       transparent 4px
     );
   }
+}
+
+@utility glitch {
+  animation: glitch 5s infinite;
+  animation-timing-function: steps(1, end);
 }
 
 @utility pixel-grid {
