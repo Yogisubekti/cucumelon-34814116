@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogTrigger,
   DialogContent,
   DialogHeader,
   DialogTitle,
@@ -17,10 +18,10 @@ export type NFTItem = {
 };
 
 function RarityBadge({ rarity }: { rarity: string }) {
-  const style = RARITY_COLORS[rarity] ?? RARITY_COLORS.Common;
+  const style = RARITY_COLORS[rarity] ?? RARITY_COLORS["Common"];
   return (
     <span
-      className={`border-2 border-border px-2 py-1 text-[10px] font-bold uppercase tracking-widest ${style.bg} ${style.text}`}
+      className={`border-2 border-border px-2 py-1 text-[10px] font-bold uppercase tracking-widest ${style?.bg ?? "bg-muted-foreground/25"} ${style?.text ?? "text-foreground"}`}
     >
       {rarity}
     </span>
