@@ -19,7 +19,7 @@ export function Footer() {
             OpenSea
           </a>
           <a
-            href="https://x.com"
+            href="https://x.com/_cucumelon"
             target="_blank"
             rel="noreferrer noopener"
             className="text-sm font-bold uppercase tracking-widest text-paper transition-colors hover:text-lime"
@@ -27,7 +27,7 @@ export function Footer() {
             X
           </a>
           <a
-            href={OPENSEA_URL}
+            href="https://x.com/_cucumelon"
             target="_blank"
             rel="noreferrer noopener"
             className="text-sm font-bold uppercase tracking-widest text-paper transition-colors hover:text-lime"
