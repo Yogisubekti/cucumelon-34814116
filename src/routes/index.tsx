@@ -8,7 +8,7 @@ import { CollectionInfo } from "@/components/CollectionInfo";
 import { Roadmap } from "@/components/Roadmap";
 import { OpenSeaCTA } from "@/components/OpenSeaCTA";
 import { Footer } from "@/components/Footer";
-import heroAsset from "@/assets/cuke-4.asset.json";
+import heroAsset from "@/assets/cuke-4.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,14 +26,14 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: heroAsset.url },
+      { property: "og:image", content: heroAsset },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Cucumelon — Pixel Art NFT Collection" },
       {
         name: "twitter:description",
         content: "Fresh pixels. Weird characters. A pixel-art NFT collection on Robinhood Chain.",
       },
-      { name: "twitter:image", content: heroAsset.url },
+      { name: "twitter:image", content: heroAsset },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
