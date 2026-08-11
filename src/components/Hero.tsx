@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PixelDecor } from "@/components/PixelDecor";
 import { Countdown } from "@/components/Countdown";
 import { OPENSEA_URL } from "@/lib/constants";
-import heroAsset from "@/assets/cuke-4.asset.json";
+import heroAsset from "@/assets/cuke-4.jpg";
 
 export function Hero() {
   return (
@@ -42,7 +42,7 @@ export function Hero() {
         <div className="relative flex justify-center lg:justify-end">
           <div className="absolute inset-x-8 top-8 bottom-8 border-2 border-border bg-lime" />
           <img
-            src={heroAsset.url}
+            src={heroAsset}
             alt="Cucumelon pixel art character wearing a golden crown and royal cape"
             width={1024}
             height={1024}
