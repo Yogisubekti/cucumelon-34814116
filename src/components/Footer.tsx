@@ -27,7 +27,7 @@ export function Footer() {
             X
           </a>
           <a
-            href="https://x.com/_cucumelon"
+            href="https://m.debox.pro/moment?id=sajvvg6m&invite_code=xul8dhrq"
             target="_blank"
             rel="noreferrer noopener"
             className="text-sm font-bold uppercase tracking-widest text-paper transition-colors hover:text-lime"
