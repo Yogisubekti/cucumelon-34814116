@@ -1,4 +1,4 @@
-import { OPENSEA_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, OPENSEA_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -7,6 +7,13 @@ export function Footer() {
         <div>
           <p className="font-display text-base text-lime">CUCUMELON</p>
           <p className="mt-3 text-sm font-medium text-paper/70">Fresh pixels. Weird characters.</p>
+          <p className="mt-4 text-xs font-bold uppercase tracking-widest text-paper/50">Contact</p>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="mt-1 inline-block text-sm font-medium text-paper transition-colors hover:text-lime"
+          >
+            {CONTACT_EMAIL}
+          </a>
         </div>
 
         <nav className="flex flex-col gap-3 md:items-end">
