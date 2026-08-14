@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      whitelist_entries: {
+        Row: {
+          created_at: string
+          followed: boolean
+          id: string
+          liked: boolean
+          name: string
+          note: string | null
+          shared: boolean
+          stage: string
+          twitter_username: string
+          wallet_address: string
+        }
+        Insert: {
+          created_at?: string
+          followed?: boolean
+          id?: string
+          liked?: boolean
+          name: string
+          note?: string | null
+          shared?: boolean
+          stage?: string
+          twitter_username: string
+          wallet_address: string
+        }
+        Update: {
+          created_at?: string
+          followed?: boolean
+          id?: string
+          liked?: boolean
+          name?: string
+          note?: string | null
+          shared?: boolean
+          stage?: string
+          twitter_username?: string
+          wallet_address?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
