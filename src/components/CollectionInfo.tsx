@@ -1,5 +1,5 @@
 const stats = [
-  { value: "1,000", label: "NFTs" },
+  { value: "3,333", label: "NFTs" },
   { value: "Pixel", label: "Art style" },
   { value: "Robinhood", label: "Chain" },
   { value: "Open", label: "Collection" },
