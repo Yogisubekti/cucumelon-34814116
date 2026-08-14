@@ -41,12 +41,16 @@ export function Hero() {
 
         <div className="relative flex justify-center lg:justify-end">
           <div className="absolute inset-x-8 top-8 bottom-8 border-2 border-border bg-lime" />
-          <img
-            src={heroAsset}
-            alt="Cucumelon pixel art character wearing a golden crown and royal cape"
-            width={1024}
-            height={1024}
-            className="pixelated relative w-[min(100%,26rem)] animate-float drop-shadow-[8px_8px_0_var(--ink)]"
+          <video
+            src="/cucumelon-hero.mp4"
+            poster="/cucumelon-hero-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Cucumelon pixel art animation"
+            className="pixelated relative w-[min(100%,26rem)] border-4 border-border shadow-pixel"
           />
         </div>
       </div>
