@@ -1,4 +1,4 @@
-import { OPENSEA_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, OPENSEA_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
