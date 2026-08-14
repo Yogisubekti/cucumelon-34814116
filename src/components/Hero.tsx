@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { PixelDecor } from "@/components/PixelDecor";
 import { Countdown } from "@/components/Countdown";
 import { OPENSEA_URL } from "@/lib/constants";
-import heroAsset from "@/assets/cuke-4.jpg";
 
 export function Hero() {
   return (
