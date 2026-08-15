@@ -1,5 +1,5 @@
 export const OPENSEA_URL = "https://opensea.io/collection/cucumelon";
-export const TWITTER_URL = "https://x.com/_cucumelon";
+export const TWITTER_URL = "https://x.com/cucumelonNFT";
 
 // Target date for the "Minting Soon" countdown.
 // Update this to the real mint launch date.

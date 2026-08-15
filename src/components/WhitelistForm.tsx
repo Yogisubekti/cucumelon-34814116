@@ -39,7 +39,7 @@ const STAGES = [
 ] as const;
 
 const TASKS = [
-  { key: "followed", icon: UserPlus, label: "Follow @_cucumelon di X" },
+  { key: "followed", icon: UserPlus, label: "Follow @cucumelonNFT di X" },
   { key: "liked", icon: Heart, label: "Like postingan pengumuman freemint" },
   { key: "shared", icon: Repeat2, label: "Repost / share postingan tersebut" },
 ] as const;
@@ -168,7 +168,7 @@ export function WhitelistForm() {
             </div>
             <h3 className="mt-6 font-display text-sm text-foreground">Submission Received</h3>
             <p className="mt-4 text-sm font-medium text-muted-foreground">
-              Terima kasih! Datamu masuk antrean review. Pastikan kamu tetap follow @_cucumelon supaya tidak
+              Terima kasih! Datamu masuk antrean review. Pastikan kamu tetap follow @cucumelonNFT supaya tidak
               terlewat pengumuman daftar GTD & FCFS.
             </p>
           </div>
