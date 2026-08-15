@@ -8,6 +8,7 @@ const links = [
   { label: "Collection", href: "#collection" },
   { label: "Traits", href: "#traits" },
   { label: "About", href: "#about" },
+  { label: "Whitelist", href: "#whitelist" },
 ];
 
 export function Navbar() {

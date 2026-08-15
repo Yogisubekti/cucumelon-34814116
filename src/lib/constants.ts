@@ -8,6 +8,9 @@ export const MINT_DATE = new Date("2026-08-16T13:00:00Z");
 
 export const CONTACT_EMAIL = "waitlist@cucumelon.online";
 
+// Whitelist form closes 5 hours before mint (16 Aug 2026, 15:00 WIB)
+export const FORM_DEADLINE = new Date("2026-08-16T08:00:00Z");
+
 export const RARITY_COLORS: Record<string, { bg: string; text: string }> = {
   Common: { bg: "bg-muted-foreground/25", text: "text-foreground" },
   Uncommon: { bg: "bg-emerald", text: "text-ink" },

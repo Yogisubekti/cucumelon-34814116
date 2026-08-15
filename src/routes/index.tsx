@@ -6,6 +6,7 @@ import { About } from "@/components/About";
 import { Traits } from "@/components/Traits";
 import { CollectionInfo } from "@/components/CollectionInfo";
 import { Roadmap } from "@/components/Roadmap";
+import { WhitelistForm } from "@/components/WhitelistForm";
 import { OpenSeaCTA } from "@/components/OpenSeaCTA";
 import { Footer } from "@/components/Footer";
 import heroAsset from "@/assets/cuke-4.jpg";
@@ -51,6 +52,7 @@ function Index() {
         <Traits />
         <CollectionInfo />
         <Roadmap />
+        <WhitelistForm />
         <OpenSeaCTA />
       </main>
       <Footer />
