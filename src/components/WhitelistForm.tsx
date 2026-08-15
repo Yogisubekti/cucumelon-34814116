@@ -12,7 +12,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { FORM_DEADLINE, TWITTER_URL } from "@/lib/constants";
 
 const schema = z.object({
-  name: z.string().trim().min(2, "Name minimal 2 karakter").max(80, "Name maksimal 80 karakter"),
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(80, "Name must be at most 80 characters"),
   twitter_username: z
     .string()
     .trim()
@@ -20,28 +20,28 @@ const schema = z.object({
     .pipe(
       z
         .string()
-        .min(2, "Username X minimal 2 karakter")
-        .max(40, "Username X maksimal 40 karakter")
-        .regex(/^[A-Za-z0-9_]+$/, "Username X hanya huruf, angka, dan underscore"),
+        .min(2, "X username must be at least 2 characters")
+        .max(40, "X username must be at most 40 characters")
+        .regex(/^[A-Za-z0-9_]+$/, "X username can only contain letters, numbers, and underscores"),
     ),
   wallet_address: z
     .string()
     .trim()
-    .min(8, "Alamat dompet tidak valid")
-    .max(120, "Alamat dompet terlalu panjang")
-    .regex(/^0x[a-fA-F0-9]{40}$/, "Gunakan alamat EVM yang valid (0x...)"),
-  note: z.string().trim().max(300, "Catatan maksimal 300 karakter").optional(),
+    .min(8, "Wallet address is invalid")
+    .max(120, "Wallet address is too long")
+    .regex(/^0x[a-fA-F0-9]{40}$/, "Use a valid EVM address (0x...)"),
+  note: z.string().trim().max(300, "Note can be at most 300 characters").optional(),
 });
 
 const STAGES = [
-  { value: "GTD", label: "GTD", desc: "Guaranteed spot — dijamin kebagian slot mint." },
-  { value: "FCFS", label: "FCFS", desc: "First come, first served — rebutan sisa slot." },
+  { value: "GTD", label: "GTD", desc: "Guaranteed spot — guaranteed mint slot." },
+  { value: "FCFS", label: "FCFS", desc: "First come, first served — fight for remaining slots." },
 ] as const;
 
 const TASKS = [
-  { key: "followed", icon: UserPlus, label: "Follow @cucumelonNFT di X" },
-  { key: "liked", icon: Heart, label: "Like postingan pengumuman freemint" },
-  { key: "shared", icon: Repeat2, label: "Repost / share postingan tersebut" },
+  { key: "followed", icon: UserPlus, label: "Follow @cucumelonNFT on X" },
+  { key: "liked", icon: Heart, label: "Like the freemint announcement post" },
+  { key: "shared", icon: Repeat2, label: "Repost / share that post" },
 ] as const;
 
 function pad(n: number) {
@@ -105,12 +105,12 @@ export function WhitelistForm() {
         if (!next[key]) next[key] = issue.message;
       }
       setErrors(next);
-      toast.error("Periksa lagi datamu.");
+      toast.error("Please check your data.");
       return;
     }
 
     if (!allTasksDone) {
-      toast.error("Wajib follow, like, dan share dulu ya.");
+      toast.error("You must complete follow, like, and share first.");
       return;
     }
 
@@ -130,15 +130,15 @@ export function WhitelistForm() {
 
     if (error) {
       if (error.code === "23505") {
-        toast.error("Username X atau alamat dompet ini sudah terdaftar.");
+        toast.error("This X username or wallet address is already registered.");
         return;
       }
-      toast.error("Gagal mengirim. Coba lagi sebentar lagi.");
+      toast.error("Submission failed. Please try again shortly.");
       return;
     }
 
     setDone(true);
-    toast.success("Pendaftaran terkirim! Data kamu akan kami tinjau.");
+    toast.success("Entry submitted! Your data will be reviewed.");
   }
 
   return (
@@ -147,14 +147,15 @@ export function WhitelistForm() {
       <div className="relative mx-auto max-w-3xl px-5 py-24 md:px-8 md:py-32">
         <div className="text-center">
           <span className="inline-block border-2 border-lime px-3 py-1 font-display text-[0.6rem] text-lime">
-            FREEMINT WHITELIST
+            FREEMINT WAITLIST
           </span>
           <h2 className="mt-6 break-words font-display text-[clamp(1.1rem,5vw,2.5rem)] text-lime">
             Claim Your Spot
           </h2>
           <p className="mt-5 text-base font-medium text-paper/80">
-            Isi formulir ini untuk berlomba masuk daftar <strong className="text-paper">GTD</strong> dan{" "}
-            <strong className="text-paper">FCFS</strong> di stage freemint. Semua data akan ditinjau manual.
+            Fill out this form to compete for the <strong className="text-paper">GTD</strong> and{" "}
+            <strong className="text-paper">FCFS</strong> lists in the freemint stage. All data will be reviewed
+            manually.
           </p>
           <p className="mt-4 font-display text-[0.65rem] text-paper/70" aria-live="polite">
             {ready ? (closed ? "FORM CLOSED" : `CLOSES IN ${label}`) : "LOADING…"}
@@ -168,16 +169,15 @@ export function WhitelistForm() {
             </div>
             <h3 className="mt-6 font-display text-sm text-foreground">Submission Received</h3>
             <p className="mt-4 text-sm font-medium text-muted-foreground">
-              Terima kasih! Datamu masuk antrean review. Pastikan kamu tetap follow @cucumelonNFT supaya tidak
-              terlewat pengumuman daftar GTD & FCFS.
+              Thank you! Your data is in the review queue. Make sure you keep following @cucumelonNFT so you don't miss
+              the GTD & FCFS list announcement.
             </p>
           </div>
         ) : closed && ready ? (
           <div className="mt-12 border-4 border-border bg-background/95 p-8 text-center">
-            <h3 className="font-display text-sm text-foreground">Pendaftaran Ditutup</h3>
+            <h3 className="font-display text-sm text-foreground">Registration Closed</h3>
             <p className="mt-4 text-sm font-medium text-muted-foreground">
-              Formulir whitelist sudah ditutup 5 jam sebelum mint dimulai. Pantau X kami untuk pengumuman
-              daftar final.
+              The waitlist form has closed 5 hours before mint begins. Follow our X for the final list announcement.
             </p>
           </div>
         ) : (
@@ -186,7 +186,7 @@ export function WhitelistForm() {
             <fieldset>
               <legend className="font-display text-[0.65rem] text-foreground">1. Mandatory Tasks</legend>
               <p className="mt-3 text-sm font-medium text-muted-foreground">
-                Wajib selesai semua. Kami cek manual sebelum menetapkan daftar.
+                All tasks are mandatory. We manually verify each one before finalizing the list.
               </p>
               <div className="mt-5 space-y-3">
                 {TASKS.map(({ key, icon: Icon, label: taskLabel }) => {
@@ -258,7 +258,7 @@ export function WhitelistForm() {
                     name="name"
                     maxLength={80}
                     required
-                    placeholder="Nama atau nickname"
+                    placeholder="Name or nickname"
                     className="mt-2 rounded-none border-2 border-border"
                   />
                   {errors['name'] && <p className="mt-2 text-xs font-semibold text-destructive">{errors['name']}</p>}
@@ -307,7 +307,7 @@ export function WhitelistForm() {
                     name="note"
                     maxLength={300}
                     rows={3}
-                    placeholder="Kontribusi kamu ke komunitas, link repost, dll."
+                    placeholder="Your contribution to the community, repost link, etc."
                     className="mt-2 rounded-none border-2 border-border"
                   />
                   {errors['note'] && <p className="mt-2 text-xs font-semibold text-destructive">{errors['note']}</p>}
@@ -327,16 +327,16 @@ export function WhitelistForm() {
                   <Loader2 className="animate-spin" /> Submitting…
                 </>
               ) : (
-                "Submit Whitelist Entry"
+                "Submit Waitlist Entry"
               )}
             </Button>
             {!allTasksDone && (
               <p className="mt-3 text-center text-xs font-semibold text-muted-foreground">
-                Centang ketiga task dulu untuk mengaktifkan tombol.
+                Complete all three tasks first to enable the button.
               </p>
             )}
             <p className="mt-4 text-center text-xs font-medium text-muted-foreground">
-              Satu orang satu entry. Username X & wallet ganda otomatis ditolak.
+              One entry per person. Duplicate X usernames and wallets will be rejected automatically.
             </p>
           </form>
         )}
