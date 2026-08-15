@@ -26,7 +26,7 @@ export function Footer() {
             OpenSea
           </a>
           <a
-            href="https://x.com/_cucumelon"
+            href="https://x.com/cucumelonNFT"
             target="_blank"
             rel="noreferrer noopener"
             className="text-sm font-bold uppercase tracking-widest text-paper transition-colors hover:text-lime"
