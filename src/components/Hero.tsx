@@ -26,11 +26,14 @@ export function Hero() {
             A pixel-powered NFT collection growing on Robinhood Chain.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild variant="pixel" size="xl" className="w-full sm:w-auto">
               <a href={OPENSEA_URL} target="_blank" rel="noreferrer noopener">
                 View collection <ArrowUpRight />
               </a>
+            </Button>
+            <Button asChild variant="pixelOutline" size="xl" className="w-full sm:w-auto">
+              <a href="#whitelist">Join Waitlist</a>
             </Button>
             <Button asChild variant="pixelOutline" size="xl" className="w-full sm:w-auto">
               <a href="#traits">Explore the traits</a>
