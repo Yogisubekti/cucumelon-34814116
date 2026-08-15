@@ -52,6 +52,7 @@ function Index() {
         <Traits />
         <CollectionInfo />
         <Roadmap />
+        <WhitelistForm />
         <OpenSeaCTA />
       </main>
       <Footer />
