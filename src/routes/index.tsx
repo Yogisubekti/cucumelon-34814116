@@ -1,9 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { CollectionGrid } from "@/components/CollectionGrid";
 import { About } from "@/components/About";
-import { Traits } from "@/components/Traits";
 import { CollectionInfo } from "@/components/CollectionInfo";
 import { Roadmap } from "@/components/Roadmap";
 import { WhitelistForm } from "@/components/WhitelistForm";
@@ -47,9 +45,7 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
-        <CollectionGrid />
         <About />
-        <Traits />
         <CollectionInfo />
         <Roadmap />
         <WhitelistForm />
