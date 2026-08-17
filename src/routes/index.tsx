@@ -45,9 +45,7 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
-        <CollectionGrid />
         <About />
-        <Traits />
         <CollectionInfo />
         <Roadmap />
         <WhitelistForm />
